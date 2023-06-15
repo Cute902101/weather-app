@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="" lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +7,15 @@
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="/dist/output.css">
   </head>
-  <body>
+  <body class="">
     <!-- nav section -->
-    <section>
+    
         <nav class="flex justify-between bg-gradient-to-tr from-amber-500 to-amber-300 w-full shadow-md"> 
             <div class="p-3">
                 <img class=" w-8 h-8 text-gray-100" src="./images/soil-temperature-global-svgrepo-com.svg"></img>
             </div> 
             <form data-location-form class="flex p-4 ">
-                <input class="rounded-l-md bg-amber-100" type="">
+                <input data-location-input class="rounded-l-md bg-amber-100" type="">
                 <button class="rounded-r-lg bg-amber-100 font-thin px-2">Search</button>
             </form>
             <ul class="flex justify-between p-4 font-semibold">
@@ -23,12 +23,69 @@
                 <li class="px-2 ">Place Holder</li>
                 <li class="px-2 ">dark/light</li>
             </ul>
-        </nav>
+          </nav>
 
-        <div class="grid grid-cols-"> 
+    <section>    
+          <div class="grid grid-cols-2 p-6 h-fit w-fit">
+            <h1 class="font-bold text-3xl col-span-full border-y-2 border-gray-500">Current Weather</h1> 
+              <div class="grid col-span-1 items-start justify-items-end"> 
+                <img data-current-icon class="h-28" src="#">
+              </div>
+              <div class="">
+                <p data-current-temp class="font-bold text-3xl"></p>
+                <p data-feels-like class="font-thin py-2">Feels like: (x)</p>
+                
+                </div>
+                <p data-current-temp class="font-thin col-start-1">Precipitation: (x)</p>
+                <p data-current-temp class="font-thin col-start-1">Humidity: (x)</p>
+                <p data-current-temp class="font-thin col-start-1">Wind: (x)</p> 
+                 
+          </div>
+      </section>
+      
+        <section class="absolute top-20 left-96">
+          <div class="flex flex-row w-5/12 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-thin scrollbar-thumb-amber-400
+                      ">
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+            <div class="hourly p-4">hour</div>
+          </div>
+        </section>
 
-        </div>
-    </section>
+          <section class="mt-28">
+            <div class="grid grid-cols-8 p-6">
+              <div class="title">title</div>
+              <div class="title">title</div>
+              <div class="title">title</div>
+              <div class="title">title</div>
+              <div class="title">title</div>
+              <div class="title">title</div>
+              <div class="title">title</div>
+              <div class="title">title</div>
+            </div>
+          </section>
 
 
 
