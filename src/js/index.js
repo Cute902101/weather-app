@@ -10,7 +10,9 @@ async function fetchWeatherData () {
     let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=47c174966a23453c98f23538230506&q=Miami&days=7&aqi=no&alerts=no`)
     let apiData = await response.json();
     apiDataModule.setApiData(apiData);
-    renderData()
+    apiDataModule.consoleData()
+    apiDataModule.renderCurrentWeather()
+    apiDataModule.renderHourlyWeather()
   } 
   catch(error) {
     alert("oops! try again")
