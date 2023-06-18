@@ -28,12 +28,20 @@ const apiDataModule = (function () {
     }
 
     function renderHourlyWeather () {
-        let hourlyConditionIcon = document.querySelectorAll(".hourly-condition-img")
-        let hourlyWeatherData = apiData.forecast.forecastday[0].day.condition.icon;
-        hourlyConditionIcon.forEach(hour => {
-            hour.src = hourlyWeatherData
+        let hourlyConditionIcon = document.querySelectorAll(".hourly-condition-img");
+        let hourlyWeatherData = apiData.forecast.forecastday[0].hour;
+        let currentHourArray = [];
+        for (let i = 0; i < hourlyWeatherData.length; i++) {
+          let currentHour = hourlyWeatherData[i].condition.icon;
+          currentHourArray.push(currentHour)
             
-        })
+          }  
+          console.log(currentHourArray)
+           hourlyConditionIcon.forEach((element, index) => { 
+            let icon = currentHourArray[index];
+            element.src = icon;
+            
+           })
 
     }
 
