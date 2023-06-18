@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="" lang="en">
+ <html class="overflow-hidden h-screen w-screen bg-gradient-to-b from-slate-300 to-blue-300" lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,8 @@
                 <li class="px-2 ">dark/light</li>
             </ul>
           </nav>
-
+      
+    <!-- current weather grid -->
     <section>    
           <div class="grid grid-cols-2 p-6 h-fit w-fit">
             <h1 class="font-bold text-3xl col-span-full border-y-2 border-gray-500">Current Weather</h1> 
@@ -33,57 +34,318 @@
               </div>
               <div class="">
                 <p data-current-temp class="font-bold text-3xl"></p>
-                <p data-feels-like class="font-thin py-2">Feels like: (x)</p>
+                <p data-feels-like class="font-thin py-2">Feels like: 
+                  <span data-current-feelslike class="font-semibold"></span></p>
                 
                 </div>
-                <p data-current-temp class="font-thin col-start-1">Precipitation: (x)</p>
-                <p data-current-temp class="font-thin col-start-1">Humidity: (x)</p>
-                <p data-current-temp class="font-thin col-start-1">Wind: (x)</p> 
+                <p data-current-temp class="font-thin col-start-1">Precipitation: 
+                  <span data-current-precipitation class="font-semibold"></span></p>
+                <p data-current-temp class="font-thin col-start-1">Humidity: 
+                  <span data-current-humidity class="font-semibold"></span></p>
+                <p data-current-temp class="font-thin col-start-1">Wind: <span data-current-wind class="font-semibold"></span></p> 
                  
           </div>
       </section>
       
+      <!-- hourly weather section -->
         <section class="absolute top-20 left-96">
-          <div class="flex flex-row w-5/12 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-thin scrollbar-thumb-amber-400
-                      ">
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
-            <div class="hourly p-4">hour</div>
+          <div class="hourly-container flex flex-row w-2/12 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-thin scrollbar-thumb-amber-400
+                      shadow-inner ring-opacity- ">
+            <!-- <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div>
+            <div class="hourly p-4">hour
+              <div class="grid p-4">
+                <img class="hourly-condition-img" src="#">
+                <h1 class="hourly-condition">(condition)</h1>
+                <p class="hourly-precipitaion">(precipitation)</p>
+                <p class="hourly-humidity">(humidity)</p>
+                <p class="hourly-wind">(wind)</p>
+              </div>
+            </div> -->
+            
           </div>
         </section>
 
+          <!-- future forecast grid -->
           <section class="mt-28">
-            <div class="grid grid-cols-8 p-6">
-              <div class="title">title</div>
-              <div class="title">title</div>
-              <div class="title">title</div>
-              <div class="title">title</div>
-              <div class="title">title</div>
-              <div class="title">title</div>
-              <div class="title">title</div>
-              <div class="title">title</div>
+            <div class="grid sm:grid-cols-8 p-6">
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
+              <div class="forecast p-4">date
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-condition">(condition)</h1>
+                  <p class="forecast-precipitaion">(precipitation)</p>
+                  <p class="forecast-humidity">(humidity)</p>
+                  <p class="forecast-wind">(wind)</p>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -94,6 +356,6 @@
     
 
 
-	<script src="index.js"></script>
+	<script type="module" src="./js/index.js"></script>
   </body>
 </html>
