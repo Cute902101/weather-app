@@ -1,73 +1,61 @@
 
+export const renderWeatherDataModule = (function () {
+  // this loads the current weather data for into the DOM by passing apiData from
+  // the async function fetchWeatherData
+    function renderCurrentWeather(apiData) {
+      const {
+        current: {
+          condition: { icon },
+          temp_f,
+          feelslike_f,
+        condition:{ text },
+          humidity,
+          wind_dir,
+          wind_mph,
+        }
+      } = apiData;
 
-const apiDataModule = (function () {
-    let apiData = {};
-  
-    function setApiData(data) {
-      apiData = { ...data };
-    }
-  
-    function consoleData() {
-        console.log(apiData)
-    }
-
-    function renderCurrentWeather() {
-      let currentIcon = document.querySelector("[data-current-icon]");
+      let currentWeatherIcon = document.querySelector("[data-current-icon]");
       let currentTemp = document.querySelector("[data-current-temp]");
-      let feelsLike = document.querySelector("[data-current-feelslike]");
-      let currentPrecipitation = document.querySelector("[data-current-precipitation]");
-      let currentHumidity = document.querySelector("[data-current-humidity]")
-      let currentWind = document.querySelector("[data-current-wind]")
-      
-        currentIcon.src = apiData.current.condition.icon
-        currentTemp.innerText = apiData.current.temp_f
-        feelsLike.innerText = apiData.current.feelslike_f
-        // currentPrecipitation.value = apiData.current.
-        currentHumidity.innerText = apiData.current.humidity
-        currentWind.innerText = apiData.current.wind_dir + "/" + apiData.current.wind_mph + "mph"
+      let currentlyFeelsLike = document.querySelector("[data-current-feelslike]");
+      let currentCondition = document.querySelector("[data-current-condition]");
+      let currentHumidity = document.querySelector("[data-current-humidity]");
+      let currentWind = document.querySelector("[data-current-wind]");
+      console.log(apiData)
+        currentWeatherIcon.src = icon
+        currentTemp.innerText = temp_f;
+        currentlyFeelsLike.innerText = feelslike_f;
+        currentCondition.innerText = text;
+        currentHumidity.innerText = humidity;
+        currentWind.innerText = wind_dir + "/" + wind_mph + "mph";
     }
-
-    function renderHourlyWeather () {
+  // render hourly weather data into the DOM 
+    function renderHourlyWeather (apiData) {
         let hourlyConditionIcon = document.querySelectorAll(".hourly-condition-img");
+        let hourlyConditionText = document.querySelectorAll(".hourly-condition-text")
         let hourlyWeatherData = apiData.forecast.forecastday[0].hour;
         let currentHourArray = [];
         for (let i = 0; i < hourlyWeatherData.length; i++) {
           let currentHour = hourlyWeatherData[i].condition.icon;
-          currentHourArray.push(currentHour)
-            
+          currentHourArray.push(currentHour);
           }  
-          console.log(currentHourArray)
            hourlyConditionIcon.forEach((element, index) => { 
             let icon = currentHourArray[index];
             element.src = icon;
-            
            })
 
     }
 
+    function renderDailyForecast () {
+
+    }
+
     return {
-      
-      consoleData,
-      setApiData,
       renderCurrentWeather,
       renderHourlyWeather,
-      
-    };
-  })();
+    }
+})()
   
-  export default apiDataModule;
+  
   
 
-// export function log () {
-//     const hour = document.querySelectorAll(".hourly")
-//     console.log(hour)
-    
-// }
-
-// export function renderCurrentWeatherIcon (getData) {
-//     currentIcon.src = getData.current.condition.icon
-//   }
-  
-//  export function renderCurrentTemp (getData) {
-//     currentTemp.innerText = getData.current.temp_f + "°F"
-//  }
