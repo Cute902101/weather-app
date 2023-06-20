@@ -7,10 +7,12 @@ let locationInput = document.querySelector("[data-location-input]");
 async function fetchWeatherData () {
   let location = locationInput.value;
   try {
-    let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=47c174966a23453c98f23538230506&q=Homestead&days=7&aqi=no&alerts=no`);
+    let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=47c174966a23453c98f23538230506&q=homestead&days=8&aqi=no&alerts=no`);
     let apiData = await response.json();
     renderWeatherDataModule.renderCurrentWeather(apiData);
     renderWeatherDataModule.renderHourlyWeather(apiData);
+    renderWeatherDataModule.renderDailyForecast(apiData);
+    console.log(apiData)
   } 
   catch(error) {
     alert("oops! try again");
