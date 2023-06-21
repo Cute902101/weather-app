@@ -2,44 +2,51 @@ export function createHourlyElements() {
     const parentDiv = document.querySelector(".hourly-container");
   
     for (let i = 0; i < 24; i++) {
-      // Create the main container div
+      // create the main container div
       const hourlyDiv = document.createElement("div");
-      hourlyDiv.className = "hourly p-4";
-      hourlyDiv.textContent = "hour";
+      hourlyDiv.className = "p-4";
   
-      // Create the grid div
+      // create grid div
       const gridDiv = document.createElement("div");
       gridDiv.className = "grid p-4";
-  
-      // Create the image element
+
+      // create the hour as heading for hourly data  
+      const hourHeading = document.createElement("h1");
+      hourHeading.className = "hourly-heading font-bold";
+      hourHeading.textContent = "hour"
+      gridDiv.appendChild(hourHeading);
+        
+      // create the image element
       const img = document.createElement("img");
       img.className = "hourly-condition-img";
       img.src = "#";
       gridDiv.appendChild(img);
   
-      // Create the condition heading
+      // create the condition heading
       const conditionHeading = document.createElement("h1");
       conditionHeading.className = "hourly-condition-text";
       conditionHeading.textContent = "(condition)";
       gridDiv.appendChild(conditionHeading);
   
-      // Create the precipitation paragraph
+      // create the precipitation paragraph
       const precipitationPara = document.createElement("p");
-      precipitationPara.className = "hourly-precipitaion";
+      precipitationPara.className = "hourly-precipitation";
       precipitationPara.textContent = "(precipitation)";
       gridDiv.appendChild(precipitationPara);
-  
-      // Create the humidity paragraph
-      const humidityPara = document.createElement("p");
-      humidityPara.className = "hourly-humidity";
-      humidityPara.textContent = "(humidity)";
-      gridDiv.appendChild(humidityPara);
-  
-      // Create the wind paragraph
+      
+      // create the wind paragraph
       const windPara = document.createElement("p");
-      windPara.className = "hourly-wind";
       windPara.textContent = "(wind)";
+      windPara.className = "hourly-wind";
       gridDiv.appendChild(windPara);
+      
+      // create the uv index paragraph
+      const uvIndexPara = document.createElement("p");
+      uvIndexPara.className = "hourly-uvs";
+      uvIndexPara.textContent = "(UV)";
+      gridDiv.appendChild(uvIndexPara);
+  
+     
   
       // Append the grid div to the hourly div
       hourlyDiv.appendChild(gridDiv);

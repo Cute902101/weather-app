@@ -1,5 +1,5 @@
 
-export const renderWeatherDataModule = (function () {
+ 
   // this loads the current weather data into the DOM by passing apiData from
   // the async function fetchWeatherData
     function renderCurrentWeather(apiData) { 
@@ -67,20 +67,33 @@ export const renderWeatherDataModule = (function () {
                       return hour - 12 + "PM"
                     } else
                       return hour ;
-                }
+                } 
               }
      
 
     function renderDailyForecast(apiData) {
-      const forecastConditionImg = document.querySelectorAll(".forecast-condition-img");
-      const forecastConditionImgUrl = apiData.forecast.forecastday;
       const dailyForecastDate = document.querySelectorAll(".forecast-date");
+      const dailyForecastConditionImg = document.querySelectorAll(".forecast-condition-img");
+      const dailyForecastConditionText = document.querySelectorAll(".forecast-condition-text");
+      const dailyForecastPrecipitation = document.querySelectorAll(".forecast-precipitation");
+      const dailyForecastTemperature = document.querySelectorAll(".forecast-average-temp");
+
+      const dailyForecastData = apiData.forecast.forecastday;
+      
       const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       const currentDay = new Date().getDay()
       const currentDayStr = [...weekdays.slice(currentDay), ...weekdays.slice(0, currentDay)];
-        dailyForecastDate.forEach((element, index) => {
+        dailyForecastData.forEach((forecastday, index) => {
+          const { day } = forecastday;
+          const { condition, daily_chance_of_rain, maxtemp_f, mintemp_f } = day;
+          const { text, icon } = condition;
+
           let dateHeading = currentDayStr[index];
-          element.innerText = dateHeading; 
+          dailyForecastDate[index].innerText = dateHeading; 
+          dailyForecastConditionImg[index].src = icon;
+          dailyForecastConditionText[index].innerText = text;
+          dailyForecastPrecipitation[index].innerText = "Chance of rain: " + daily_chance_of_rain + "%";
+          dailyForecastTemperature[index].innerText = maxtemp_f + "°F" + " - " + mintemp_f + "°F";
         })
 
       
@@ -90,12 +103,12 @@ export const renderWeatherDataModule = (function () {
     }
 
 
-    return {
+    export {
       renderCurrentWeather,
       renderHourlyWeather,
       renderDailyForecast,
     }
-})()
+
   
   
   

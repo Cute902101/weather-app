@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="./output.css">
+  </head>
+  <body class=" min-h-screen w-screen bg-gradient-to-b from-slate-300 to-blue-300 ">
+    <!-- nav section -->
+    
+        <nav class="flex justify-between bg-gradient-to-tr from-amber-500 to-amber-300 w-full shadow-md"> 
+            <div class="p-3">
+                <img class=" w-8 h-8 text-gray-100" src="/src/images/soil-temperature-global-svgrepo-com.svg"></img>
+            </div> 
+            <form data-location-form class="flex p-4 ">
+                <input data-location-input class="w-80 rounded-l-md bg-amber-100" type="">
+                <button class="rounded-r-lg bg-amber-100 font-thin px-2">Search</button>
+            </form>
+            <ul class="flex p-4 font-semibold">
+                <li class="px-2 ">PlaceHolder</li>
+                <li class="px-2 ">Place Holder</li>
+                <li class="px-2 ">dark/light</li>
+            </ul>
+          </nav>
+      
+    <!-- current weather grid -->
+    <section class="sm:flex md:grid md:grid-flow-col">
+            
+          <div class="grid grid-cols-2 p-6 h-fit w-96 xl:w-fit">
+            <h1 class="font-bold text-3xl col-span-2 border-y-2 border-gray-500">Current Weather: Homestead</h1> 
+              <div class="grid col-start-1 items-start justify-items-end"> 
+                <img data-current-icon class="h-28" src="#">
+              </div>
+              <div class="">
+                <p data-current-temp class="font-bold text-3xl"></p>
+                <p data-feels-like class="font-thin py-2">Feels like: 
+                  <span data-current-feelslike class="font-semibold"></span></p>
+              </div>
+                <div class="grid col-start-1">
+                  <p data-current-temp class="font-thin"> 
+                    <span data-current-condition class="font-bold"></span></p>
+                  <p data-current-temp class="font-thin">Humidity: 
+                    <span data-current-humidity class="font-semibold"></span></p>
+                  <p data-current-temp class="font-thin">Wind: <span data-current-wind class="font-semibold"></span></p> 
+              </div>
+          </div>
+
+            <div class="flex justify-between mr-80 p-6">
+              <div class="shadow-inner p-4"><span class="forecast-date font-bold"></span>
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-average-temp font-semibold">(average-temp)</h1>          
+                  <p class="forecast-condition-text">(condition)</p>
+                  <p class="forecast-precipitation">(precipitation)</p>
+                </div>
+              </div>
+              <div class="shadow-inner p-4"><span class="forecast-date font-bold"></span>
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-average-temp font-semibold">(average-temp)</h1>          
+                  <p class="forecast-condition-text">(condition)</p>
+                  <p class="forecast-precipitation">(precipitation)</p>
+                </div>
+              </div>
+              <div class="shadow-inner p-4"><span class="forecast-date font-bold"></span>
+                <div class="grid p-4">
+                  <img class="forecast-condition-img" src="#">
+                  <h1 class="forecast-average-temp font-semibold">(average-temp)</h1>
+                  <p class="forecast-condition-text">(condition)</p>
+                  <p class="forecast-precipitation">(precipitation)</p>
+                </div>
+              </div> 
+            </div>
+
+
+      </section>
+
+
+      <!-- hourly weather section created in domElements.js -->
+        <div class="">
+         
+          <div class="hourly-container flex flex-row overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-thin scrollbar-thumb-amber-400
+                      shadow-inner h-6/12 w-7/12 ml-52">
+          </div>
+        
+      </div>
+<div class="bg-blue-wave"></div>
+
+	<script type="module" src="/src/js/index.js"></script>
+  </body>
+</html>
